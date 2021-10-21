@@ -2,12 +2,12 @@
 	<h1>Input Data Buku</h1>
 
 	<form action="proses/buku-input-proses.php" method="post">
-		<div class="mb-3 mt-5 row">
+		<!-- <div class="mb-3 mt-5 row">
 			<label class="col-sm-2 col-form-label">ID Buku</label>
 			<div class="col-sm-9">
 				<input type="text" name="id_buku" class="form-control" required>
 			</div>
-		</div>
+		</div> -->
 		<div class="mb-3 row">
 			<label class="col-sm-2 col-form-label">Judul Buku</label>
 			<div class="col-sm-9">

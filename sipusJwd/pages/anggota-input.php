@@ -2,16 +2,6 @@
 	<h1>Input Data Anggota</h1>
 	
 	<form action="proses/anggota-input-proses.php" method="post">
-		<div class="mb-3 mt-5">
-			<div class="row">
-				<div class="col-2">
-					<label for="exampleInputEmail1" class="form-label">ID Anggota</label>
-				</div>
-				<div class="col-10">
-					<input type="text" name="id_anggota" class="form-control" required>
-				</div>
-			</div>
-		</div>
 		<div class="mb-3">
 			<div class="row">
 				<div class="col-2">
