@@ -1,31 +1,50 @@
-<div id="label-page"><h3>Input Data Anggota</h3></div>
-<div id="content">
+<div class="container">
+	<h1>Input Data Anggota</h1>
+	
 	<form action="proses/anggota-input-proses.php" method="post">
-	<table id="tabel-input">
-		<tr>
-			<td class="label-formulir">ID Anggota</td>
-			<td class="isian-formulir"><input type="text" name="id_anggota" class="isian-formulir isian-formulir-border"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Nama</td>
-			<td class="isian-formulir"><input type="text" name="nama" class="isian-formulir isian-formulir-border"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Jenis Kelamin</td>
-			<td class="isian-formulir"><input type="radio" name="jenis_kelamin" value="Pria">Pria</label></td>
-		</tr>
-		<tr>
-			<td class="label-formulir"></td>
-			<td class="isian-formulir"><input type="radio" name="jenis_kelamin" value="Wanita">Wanita</td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Alamat</td>
-			<td class="isian-formulir"><textarea rows="2" cols="40" name="alamat" class="isian-formulir isian-formulir-border"></textarea></td>
-		</tr>
-		<tr>
-			<td class="label-formulir"></td>
-			<td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" class="tombol"></td>
-		</tr>
-	</table>
-	</form>
+		<div class="mb-3 mt-5">
+			<div class="row">
+				<div class="col-2">
+					<label for="exampleInputEmail1" class="form-label">ID Anggota</label>
+				</div>
+				<div class="col-10">
+					<input type="text" name="id_anggota" class="form-control" required>
+				</div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<div class="row">
+				<div class="col-2">
+					<label for="exampleInputEmail1" class="form-label">Nama</label>
+				</div>
+				<div class="col-10">
+					<input type="text" name="nama" class="form-control" required>
+				</div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<div class="row">
+				<div class="col-2">
+					<label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
+				</div>
+				<div class="col-10">
+					<select class="form-select" name="jenis_kelamin" required>
+						<option value="Pria" >Pria</option>
+						<option value="Wanita" >Wanita</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<div class="row">
+				<div class="col-2">
+					<label for="exampleInputEmail1" class="form-label">Alamat</label>
+				</div>
+				<div class="col-10">
+					<textarea name="alamat" class="form-control" rows="3" required></textarea>
+				</div>
+			</div>
+		</div>
+		<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
+	</form>	
 </div>

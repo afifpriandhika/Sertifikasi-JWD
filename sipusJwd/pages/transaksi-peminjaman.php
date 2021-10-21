@@ -1,19 +1,20 @@
-<div id="label-page"><h3>Transaksi Peminjaman</h3></div>
-<div id="content">
-	<p id="tombol-tambah-container"><a href="index.php?p=transaksi-peminjaman-input" class="tombol">Transaksi Baru</a></p>
-	<table id="tabel-tampil">
+<div class="container">
+	<h1>Data Buku</h1>
+	<a class="btn btn-primary mt-3" href="index.php?p=transaksi-peminjaman-input" role="button">Transaksi Baru</a>
+
+	<table class="table table-striped table-hover mt-3">
 		<tr>
-			<th id="label-tampil-no">No</td>
+			<th>No</th>
 			<th>ID Transaksi</th>
 			<th>ID Anggota</th>
 			<th>Nama</th>
 			<th>ID Buku</th>
 			<th>Judul Buku</th>
 			<th>Tanggal Pinjam</th>
-			<th id="label-opsi3">Opsi</th>
+			<th>Opsi</th>
 		</tr>
-		<?php
 
+		<?php
 		$sql="SELECT tbtransaksi.*,tbanggota.*,tbbuku.*
 		FROM tbtransaksi,tbanggota,tbbuku
 		WHERE tbtransaksi.idanggota=tbanggota.idanggota
@@ -35,8 +36,10 @@
 			<td><?php echo $r_transaksi['judulbuku']; ?></td>
 			<td><?php echo $r_transaksi['tglpinjam']; ?></td>
 			<td>
-				<div class="tombol-opsi-container"><a href="cetak/nota-peminjaman.php?&id=<?php echo $r_transaksi['idtransaksi'];?>" target="_blank" class="tombol">Cetak Nota</a></div>
-				<div class="tombol-opsi-container"><a href="proses/pengembalian-proses.php?&id=<?php echo $r_transaksi['idtransaksi'];?>" class="tombol">Pengembalian</a></div>
+				<div class="btn-group">
+					<a href="cetak/nota-peminjaman.php?&id=<?php echo $r_transaksi['idtransaksi'];?>" class="btn btn-primary">Cetak Nota</a>
+					<a href="proses/pengembalian-proses.php?&id=<?php echo $r_transaksi['idtransaksi'];?>" class="btn btn-success">Pengembalian</a>	
+				</div>
 			</td>
 		</tr>
 		<?php } ?>

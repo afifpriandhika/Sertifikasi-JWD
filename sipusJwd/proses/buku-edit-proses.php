@@ -8,10 +8,10 @@ $pengarang=$_POST['pengarang'];
 $penerbit=$_POST['penerbit'];
 
 If(isset($_POST['simpan'])){
-	mysql_query(
-		"UPDATE tbbuku
-		SET judulbuku='$judul_buku',kategori='$kategori',pengarang='$pengarang',penerbit='$penerbit'
-		WHERE idbuku='$id_buku'"
+	mysqli_query($db,
+	"UPDATE tbbuku
+	SET judulbuku='$judul_buku',kategori='$kategori',pengarang='$pengarang',penerbit='$penerbit'
+	WHERE idbuku='$id_buku'"
 	);
 	header("location:../index.php?p=buku");
 }

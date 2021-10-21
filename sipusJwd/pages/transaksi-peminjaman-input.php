@@ -1,15 +1,16 @@
-<div id="label-page"><h3>Input Transaksi Peminjaman</h3></div>
-<div id="content">
+<div class="container">
+	<h1>Input Transaksi Peminjaman</h1>
 	<form action="proses/transaksi-peminjaman-input-proses.php" method="post">
-	<table id="tabel-input">
-		<tr>
-			<td class="label-formulir">ID Transaksi</td>
-			<td class="isian-formulir"><input type="text" name="id_transaksi" class="isian-formulir isian-formulir-border"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Anggota</td>
-			<td class="isian-formulir">
-				<select name="id_anggota" class="isian-formulir isian-formulir-border">
+		<div class="mb-3 row">
+			<label class="col-sm-2 col-form-label">ID Transaksi</label>
+			<div class="col-sm-9">
+				<input type="text" name="id_transaksi" class="form-control">
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label class="col-sm-2 col-form-label">ID Buku</label>
+			<div class="col-sm-9">
+				<select name="id_anggota" class="form-select">
 					<option value="" select="selected"> Pilih Data Anggota </option>
 					<?php
 						$q_tampil_anggota=mysqli_query($db,
@@ -22,12 +23,12 @@
 						}
 					?>
 				</select>
-			</td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Buku</td>
-			<td class="isian-formulir">
-				<select name="id_buku" class="isian-formulir isian-formulir-border">
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label class="col-sm-2 col-form-label">Buku</label>
+			<div class="col-sm-9">
+				<select name="id_buku" class="form-select">
 					<option value="" select="selected"> Pilih Data Buku </option>
 					<?php
 						$q_tampil_buku=mysqli_query($db,
@@ -40,16 +41,14 @@
 						}
 					?>
 				</select>
-			</td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Tanggal Pinjam</td>
-			<td class="isian-formulir"><input type="text" name="tgl_pinjam" value="<?php echo $tgl; ?>" readonly="readonly" class="isian-formulir isian-formulir-border warna-formulir-disabled"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir"></td>
-			<td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" class="tombol"></td>
-		</tr>
-	</table>
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label class="col-sm-2 col-form-label">Tanggal Pinjam</label>
+			<div class="col-sm-9">
+				<input type="text" name="tgl_pinjam" value="<?php echo $tgl; ?>" readonly="readonly" class="form-control">
+			</div>
+		</div>
+		<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 	</form>
 </div>

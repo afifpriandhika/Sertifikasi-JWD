@@ -3,34 +3,38 @@
 	$q_tampil_anggota=mysqli_query($db,"SELECT * FROM tbanggota WHERE idanggota='$id_anggota'");
 	$r_tampil_anggota=mysqli_fetch_array($q_tampil_anggota);
 ?>
-<div id="label-page"><h3>Edit Data Anggota</h3></div>
-<div id="content">
-	<form action="proses/anggota-edit-proses.php" method="POST">
-	<table id="tabel-input">
-		<tr>
-			<td class="label-formulir">ID Anggota</td>
-			<td class="isian-formulir"><input type="text" name="id_anggota" value="<?php echo $r_tampil_anggota['idanggota']; ?>" readonly="readonly" class="isian-formulir isian-formulir-border warna-formulir-disabled"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Nama</td>
-			<td class="isian-formulir"><input type="text" name="nama" value="<?php echo $r_tampil_anggota['nama']; ?>" class="isian-formulir isian-formulir-border"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Nama 2</td>
-			<td class="isian-formulir"><input type="text" name="name" value="" class="isian-formulir isian-formulir-border"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Jenis Kelamin</td>
-			<td class="isian-formulir"><input type="text" name="jenis_kelamin" value="<?php echo $r_tampil_anggota['jeniskelamin']; ?>" class="isian-formulir isian-formulir-border"></td>
-		</tr>
-		<tr>
-			<td class="label-formulir">Alamat</td>
-			<td class="isian-formulir"><textarea rows="2" cols="40" name="alamat" class="isian-formulir isian-formulir-border"><?php echo $r_tampil_anggota['alamat']; ?></textarea></td>
-		</tr>
-		<tr>
-			<td class="label-formulir"></td>
-			<td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" id="tombol-simpan"></td>
-		</tr>
-	</table>
-	</form>
+<div class="container">
+	<h1>Input Data Anggota</h1>
+	
+		<form action="proses/anggota-edit-proses.php" method="post">
+				<div class="mb-3 row">
+					<label for="inputIdAnggota" class="col-sm-2 col-form-label">ID Anggota</label>
+					<div class="col-sm-9">
+						<input type="text" name="id_anggota" readonly class="form-control-plaintext" value="<?php echo $r_tampil_anggota['idanggota']; ?>" id="inputIdAnggota" >
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="inputNama" class="col-sm-2 col-form-label">Nama</label>
+					<div class="col-sm-9">
+						<input type="text" name="nama" class="form-control" value="<?php echo $r_tampil_anggota['nama']; ?>" id="inputNama" required>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 col-form-label">Jenis Kelamin</label>
+					<div class="col-sm-9">
+						<select class="form-select" name="jenis_kelamin" required>
+							<option value="Pria" <?php if( $r_tampil_anggota['jeniskelamin']=="Pria") echo 'selected';?> >Pria</option>
+							<option value="Wanita" <?php if( $r_tampil_anggota['jeniskelamin']=="Wanita") echo 'selected';?> >Wanita</option>
+						</select>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="inputNama" class="col-sm-2 col-form-label">Alamat</label>
+					<div class="col-sm-9">
+						<textarea class="form-control" name="alamat" rows="3" required><?php echo $r_tampil_anggota['alamat']; ?></textarea>
+					</div>
+				</div>
+				<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
+			</form>	
 </div>
+

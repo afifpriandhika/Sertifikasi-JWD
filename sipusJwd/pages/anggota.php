@@ -1,18 +1,16 @@
-<div id="label-page"><h3>Tampil Data Anggota</h3></div>
-<div id="content">
-	<p id="tombol-tambah-container"><a href="index.php?p=anggota-input" class="tombol">Tambah Anggota</a></p>
-	<table id="tabel-tampil">
+<div class="container">
+	<h1>Data Anggota</h1>
+	<a class="btn btn-primary mt-3" href="index.php?p=anggota-input" role="button">Tambah Anggota</a>
+
+	<table class="table table-striped table-hover mt-3">
 		<tr>
-			<th id="label-tampil-no">No</td>
+		<th No</td>
 			<th>ID Anggota</th>
 			<th>Nama</th>
 			<th>Jenis Kelamin</th>
 			<th>Alamat</th>
-			<th id="label-opsi">Opsi</th>
+			<th >Opsi</th>
 		</tr>
-		
-
-		
 		<?php
 		$sql="SELECT * FROM tbanggota ORDER BY idanggota DESC";
 		$q_tampil_anggota = mysqli_query($db, $sql);
@@ -28,8 +26,8 @@
 			<td><?php echo $r_tampil_anggota['alamat']; ?></td>
 			<td>
 
-				<div class="tombol-opsi-container"><a href="index.php?p=anggota-edit&id=<?php echo $r_tampil_anggota['idanggota'];?>" class="tombol">Edit</a></div>
-				<div class="tombol-opsi-container"><a href="proses/anggota-hapus.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>" class="tombol">Hapus</a></div>
+				<a href="index.php?p=anggota-edit&id=<?php echo $r_tampil_anggota['idanggota'];?>" class="btn btn-warning ml-2">Edit</a></div>
+				<a href="proses/anggota-hapus.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>" class="btn btn-danger" >Hapus</a></div>
 			</td>
 		</tr>
 		<?php } ?>
