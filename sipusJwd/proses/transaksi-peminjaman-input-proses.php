@@ -9,13 +9,19 @@ $status_buku="Dipinjam";
 
 
 if(isset($_POST['simpan'])){
+	$sql = 
+	"INSERT INTO tbanggota
+		VALUES('$id_anggota','$nama','$jenis_kelamin','$alamat','$status')";
+	$query = mysqli_query($db, $sql);
+
+
 	mysqli_query($db,
 		"INSERT INTO tbtransaksi
 		VALUES('$id_transaksi','$id_anggota','$id_buku','$tgl_pinjam','')"
 	);
 	mysqli_query($db,
 		"UPDATE tbanggota
-		SET status='$status_anggota'
+		SET status=$status_anggota
 		WHERE idanggota='$id_anggota'"
 	);
 	mysqli_query($db,

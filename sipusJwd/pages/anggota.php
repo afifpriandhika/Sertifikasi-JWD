@@ -27,7 +27,7 @@
 			<td>
 
 				<a href="index.php?p=anggota-edit&id=<?php echo $r_tampil_anggota['idanggota'];?>" class="btn btn-warning ml-2">Edit</a></div>
-				<a href="proses/anggota-hapus.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>" class="btn btn-danger" >Hapus</a></div>
+				<a href="proses/anggota-hapus.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?');">Hapus</a></div>
 			</td>
 		</tr>
 		<?php } ?>

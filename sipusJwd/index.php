@@ -31,7 +31,8 @@ $tgl=date('Y-m-d');
 	<div class="rounded-lg shadow-lg mt-5 p-5">
 		<div class="row">
 			<div class="col-3">
-				<div class="d-grid gap-3">
+				<h4>MENU</h4>
+				<div class="d-grid gap-3 mt-5">
 					<a class="btn btn-outline-dark" href="index.php?p=beranda" type="button">beranda</a>
 					<a class="btn btn-outline-dark" href="index.php?p=anggota" type="button">data anggota</a>
 					<a class="btn btn-outline-dark" href="index.php?p=buku" type="button">data Buku</a>

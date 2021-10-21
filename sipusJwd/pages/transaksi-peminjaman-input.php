@@ -4,13 +4,13 @@
 		<div class="mb-3 row">
 			<label class="col-sm-2 col-form-label">ID Transaksi</label>
 			<div class="col-sm-9">
-				<input type="text" name="id_transaksi" class="form-control">
+				<input type="text" name="id_transaksi" class="form-control" required>
 			</div>
 		</div>
 		<div class="mb-3 row">
 			<label class="col-sm-2 col-form-label">ID Buku</label>
 			<div class="col-sm-9">
-				<select name="id_anggota" class="form-select">
+				<select name="id_anggota" class="form-select" required>
 					<option value="" select="selected"> Pilih Data Anggota </option>
 					<?php
 						$q_tampil_anggota=mysqli_query($db,
@@ -28,7 +28,7 @@
 		<div class="mb-3 row">
 			<label class="col-sm-2 col-form-label">Buku</label>
 			<div class="col-sm-9">
-				<select name="id_buku" class="form-select">
+				<select name="id_buku" class="form-select" required>
 					<option value="" select="selected"> Pilih Data Buku </option>
 					<?php
 						$q_tampil_buku=mysqli_query($db,

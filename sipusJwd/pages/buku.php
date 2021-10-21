@@ -29,7 +29,7 @@
 			<td>
 				<div class="btn-group">
 					<a href="index.php?p=buku-edit&id=<?php echo $r_tampil_buku['idbuku'];?>" class="btn btn-warning">Edit</a>
-					<a href="proses/buku-hapus.php?id=<?php echo $r_tampil_buku['idbuku']; ?>" class="btn btn-danger">Hapus</a>	
+					<a href="proses/buku-hapus.php?id=<?php echo $r_tampil_buku['idbuku']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?');">Hapus</a>	
 				</div>
 			</td>
 		</tr>
